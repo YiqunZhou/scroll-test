@@ -1,12 +1,14 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import appleVideo from '$lib/videos/applefallreverse.mp4'
+
   let autoScrollTriggered = false; 
   /**
 	 * @type {HTMLVideoElement | null}
 	 */
   let videoSnake; // Reference to the video element
-  let videoSrc = "src/lib/videos/applefallreverse.mp4"; // Add your video source here
+  // let videoSrc = "src/lib/videos/applefallreverse.mp4"; // Add your video source here
   /**
 	 * @type {HTMLElement | null}
 	 */
@@ -58,7 +60,7 @@
 
 
     <div class="holder">
-      <video bind:this={videoSnake} id="videoSnakePlayer" src={videoSrc} muted playsinline></video>
+      <video bind:this={videoSnake} id="videoSnakePlayer" src={appleVideo} muted playsinline></video>
     </div>
   </section>
   <p>Scroll up to play the video</p>
