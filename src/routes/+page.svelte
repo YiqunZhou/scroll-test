@@ -4,6 +4,7 @@
    
 
     import videoSrc from '$lib/videos/heliogeo.mp4'; // Adjust the path to your video
+    import solar from '$lib/images/solar.png';
 
     //horizontal text 
     let scrollPosition ;
@@ -79,11 +80,33 @@
     textTranslateX = `${(scrollProgress * 200) - 100}vw`;
   }
 
+  //     // Throttle function to limit scroll-triggered updates
+  //   /**
+	//  * @param {{ (): void; (arg0: any): any; }} fn
+	//  * @param {number} limit
+	//  */
+  //  function throttle(fn, limit) {
+  //       let lastCall = 0;
+  //       return function (/** @type {any} */ ...args) {
+  //           const now = new Date().getTime();
+  //           if (now - lastCall >= limit) {
+  //               lastCall = now;
+  //               // @ts-ignore
+  //               return fn(...args);
+  //           }
+  //       };
+  //   }
+
+  //   // Throttled scroll event handler for the video playback
+  //   const throttledScroll = throttle(scrollHelioGeo, 10); // 100ms throttle time
+
+
   function onScroll() {
     handleScroll();
     scrollHelioGeo();
     handleStickyScroll();
     TextHorizonScroll();
+    // throttledScroll(); 
   }
 
 
@@ -148,7 +171,7 @@
             </div>
         
       <!-- svelte-ignore a11y-img-redundant-alt -->
-      <img src="src/lib/images/solar.png" alt="Description of image" />
+      <img src={solar} alt="Description of image" />
     </div>
 
 

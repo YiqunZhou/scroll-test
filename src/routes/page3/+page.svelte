@@ -15,6 +15,27 @@
   let videoSection;
 
 
+    // Throttle function to limit scroll-triggered updates
+    /**
+	 * @param {{ (): void; (arg0: any): any; }} fn
+	 * @param {number} limit
+	 */
+   function throttle(fn, limit) {
+        let lastCall = 0;
+        return function (/** @type {any} */ ...args) {
+            const now = new Date().getTime();
+            if (now - lastCall >= limit) {
+                lastCall = now;
+                // @ts-ignore
+                return fn(...args);
+            }
+        };
+    }
+
+    // Throttled scroll event handler for the video playback
+    const throttledScroll = throttle(handleScroll, 300); // 100ms throttle time
+
+
   async function handleScroll() {
     // const section = document.querySelector('section.snake-vid'); // Get the video section
     const distance = window.scrollY - (videoSection?.offsetTop ?? 0);  // Distance from top of the section to the current scroll position
@@ -34,16 +55,18 @@
 
     // Logic to go to another page when the top is reached
     if (window.scrollY === 0) {
-      await goto('page4', { replaceState: false, noScroll: true });
+      await goto('page4', { replaceState: false, noScroll: false });
     }
   }
 
   onMount(() => {
     // videoSnake = document.getElementById('videoSnakePlayer'); // Get video element
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScroll);
     };
   });
 </script>
@@ -97,3 +120,4 @@
     height: auto;
   }
 </style>
+
