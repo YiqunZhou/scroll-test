@@ -226,7 +226,7 @@
   <section bind:this={newtonVideoSection} class="vid newton-vid">
     <!-- The vertical moving text for Newton -->
     <div class="newton-scroll-text">
-      <h1>But one true anomoly can't bring the dead theory back alive</h1>
+      <h1>But one true anomaly can't bring the dead theory back alive</h1>
     </div>
 
     <div class="holder">
