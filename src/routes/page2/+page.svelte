@@ -1,9 +1,9 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  import videoSrc from '$lib/videos/snake.mp4'; // Path to your snake video
-  import applefallSrc from '$lib/videos/applefall.mp4'; // Path to your applefall video
-  import newtonSrc from '$lib/videos/newton.mp4'; // Path to your newton video
+  // import videoSrc from '$lib/videos/snake.mp4'; // Path to your snake video
+  // import applefallSrc from '$lib/videos/applefall.mp4'; // Path to your applefall video
+  // import newtonSrc from '$lib/videos/newton.mp4'; // Path to your newton video
 
   // Horizontal text scroll variables
   let scrollPosition;
@@ -206,7 +206,7 @@
     </div>
 
     <div class="holder">
-      <video  bind:this={videoSnake} id="videoSnakePlayer" src={videoSrc} muted playsinline></video>
+      <video  bind:this={videoSnake} id="videoSnakePlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/snake_nwazim.mp4" muted playsinline></video>
     </div>
   </section>
 
@@ -218,7 +218,7 @@
     </div>
 
     <div class="holder">
-      <video bind:this={videoApplefall} id="videoApplefallPlayer" src={applefallSrc} muted playsinline></video>
+      <video bind:this={videoApplefall} id="videoApplefallPlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/applefall_svtya2.mp4" muted playsinline></video>
     </div>
   </section>
 
@@ -230,7 +230,7 @@
     </div>
 
     <div class="holder">
-      <video bind:this={videoNewton} id="videoNewtonPlayer" src={newtonSrc} muted playsinline></video>
+      <video bind:this={videoNewton} id="videoNewtonPlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/newton_dwwizf.mp4" muted playsinline></video>
     </div>
   </section>
 

@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
-    import longVideo from '$lib/videos/long.mp4'
+    // import longVideo from '$lib/videos/long.mp4'
 
       /**
 	 * @type {HTMLVideoElement}
@@ -66,7 +66,7 @@
 
     
         <div class="holder">
-          <video  bind:this={videoLong} id="videoLongPlayer" src={longVideo} muted playsinline></video>
+          <video  bind:this={videoLong} id="videoLongPlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/long_hiwa34.mp4" muted playsinline></video>
         </div>
       </section>
 

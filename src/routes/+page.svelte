@@ -3,8 +3,8 @@
     import { goto } from '$app/navigation';
    
 
-    import videoSrc from '$lib/videos/heliogeo.mp4'; // Adjust the path to your video
-    import solar from '$lib/images/solar.png';
+    // import videoSrc from '$lib/videos/heliogeo.mp4'; // Adjust the path to your video
+    // import solar from '$lib/images/solar.png';
 
     //horizontal text 
     let scrollPosition ;
@@ -171,7 +171,7 @@
             </div>
         
       <!-- svelte-ignore a11y-img-redundant-alt -->
-      <img src={solar} alt="Description of image" />
+      <img src="https://res.cloudinary.com/dufnjfidt/image/upload/v1729714575/solar_jxustn.png" alt="Description of image" />
     </div>
 
 
@@ -187,7 +187,7 @@
       <h1>Or it might be going in circles...</h1>
   </div>
       <div class="holder">
-          <video bind:this={video} id="videoPlayer" src={videoSrc} muted playsinline></video>
+          <video bind:this={video} id="videoPlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/heliogeo_x28q89.mp4" muted playsinline></video>
           
       </div>
 

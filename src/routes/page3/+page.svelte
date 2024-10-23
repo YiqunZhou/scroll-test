@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  import appleVideo from '$lib/videos/applefallreverse.mp4'
+  // import appleVideo from '$lib/videos/applefallreverse.mp4'
 
   let autoScrollTriggered = false; 
   /**
@@ -83,7 +83,7 @@
 
 
     <div class="holder">
-      <video bind:this={videoSnake} id="videoSnakePlayer" src={appleVideo} muted playsinline></video>
+      <video bind:this={videoSnake} id="videoSnakePlayer" src="https://res.cloudinary.com/dufnjfidt/video/upload/v1729714563/applefallreverse_egkkx2.mp4" muted playsinline></video>
     </div>
   </section>
   <p>Scroll up to play the video</p>
